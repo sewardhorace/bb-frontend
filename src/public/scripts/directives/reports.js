@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('trackerApp')
 .directive('reports', function(){
   return {
