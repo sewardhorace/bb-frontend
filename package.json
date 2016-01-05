@@ -1,0 +1,15 @@
+{
+  "name": "incident-tracker",
+  "version": "1.0.0",
+  "description": "track student incidents at bright beginnings childcare center",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "author": "Max White",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
