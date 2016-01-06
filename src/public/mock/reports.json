@@ -1,6 +1,6 @@
 [
   {
-    "title" : "Sample Report #1",
+    "title" : "Sample Report",
     "time" : "10:30",
     "author" : "Jim",
     "students" : [
@@ -10,11 +10,12 @@
     ],
     "description" : "Lermon Ispasn",
     "tags" : [
-      "#behavior"
+      "#Behavior",
+      "#Homicide"
     ]
   },
   {
-    "title" : "Sample Report #2",
+    "title" : "Another Sample Report",
     "time" : "10:50",
     "author" : "Jim",
     "students" : [

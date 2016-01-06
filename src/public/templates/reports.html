@@ -4,16 +4,20 @@
     <input placeholder="Title"></input>
   </div>
   <div class="report" ng-repeat="report in reports">
+    <a href="" class="edit-btn">edit</a>
     <h3>{{report.title}}</h3>
-    <p>Time: {{report.time}}</p>
-    <p>Author: {{report.author}}</p>
-    <div class="students">
-      <p>Students:</p>
-      <ul>
-        <li ng-repeat="student in report.students">{{student}}</li>
-      </ul>
+    <div class="tags">
+      <a href="" class="tag" ng-repeat="tag in report.tags">{{tag}}</a>
     </div>
-    <p class="description">Description: {{report.description}}</p>
-    <p>Tags: <em ng-repeat="tag in report.tags">{{tag}}</em></p>
+    <div class="subhead">
+      <span>{{report.author}}</span>
+      at
+      <span class="time">{{report.time}}</span>
+    </div>
+    <div class="students">
+      <strong>Students: </strong>
+        <a href="" class="student" ng-repeat="student in report.students">{{student}}</a>
+    </div>
+    <div class="notes"><strong>Notes: </strong>{{report.description}}</div>
   </div>
 </div>
