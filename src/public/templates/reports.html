@@ -1,8 +1,24 @@
 <div>
+  <div class="new-report-header">New Report:</div>
+
   <div class="report-form">
-    <p>New Report:</p>
-    <input placeholder="Title"></input>
+    <a href="" class="save-btn">save</a>
+    <input class="title-input" placeholder="Title"></input>
+    <div class="tags">
+      <a href="" class="add-tag-btn">+tag</a>
+    </div>
+    <div class="subhead">
+      <span>currentUsername</span>
+      at
+      <input class="time-input" placeholder="(Time)"></input>
+    </div>
+    <div class="students">
+      <strong>Students: </strong>
+        <a href="" class="add-student-btn">+student</a>
+    </div>
+    <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="(add notes)"></input></div>
   </div>
+
   <div class="report" ng-repeat="report in reports">
     <a href="" class="edit-btn">edit</a>
     <h3>{{report.title}}</h3>

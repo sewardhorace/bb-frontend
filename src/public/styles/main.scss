@@ -1,12 +1,83 @@
+body{
+  font-family: sans-serif;
+}
+.new-report-header{
+  margin:4px;
+  margin-bottom: -6px;
+  color:#5dcb66;
+}
 .report-form {
-  input {
+  border: 1px solid #5dcb66;
+  border-radius: 2px;
+  margin: 6px 0;
+  padding: 8px;
+  .save-btn{
+    display: block;
+    float: right;
+    color:#d46262;
+    text-decoration: none;
+  }
+  .title-input {
+    min-width: 10px;
+    margin:0px;
+    display: inline;
     border: none;
+    font-size: 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+  .tags{
+    display: inline;
+    .add-tag-btn{
+      display: inline;
+      color:white;
+      background-color: #207ac2;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: 14px;
+      padding:1px 2px;
+      margin:1px 2px;
+    }
+  }
+  .subhead{
     font-size: 14px;
+    color:#808080;
+    margin-bottom: 6px;
+    .time-input{
+      font-size: 14px;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .students{
+    font-size:14px;
+    margin:2px 0;
+    .add-student-btn{
+      color:#207ac2;
+      text-decoration: none;
+      display: inline;
+      margin: 0 4px;
+      font-size: 16px;
+    }
+  }
+  .notes{
+    font-size: 14px;
+    margin:2px 0;
+    .notes-input{
+      font-size: 14px;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
   }
 }
+
 .report {
-  font-family: sans-serif;
-  border: 1px solid black;
+  border: 1px solid #808080;
   border-radius: 2px;
   margin: 6px 0;
   padding: 8px;
@@ -17,6 +88,7 @@
     text-decoration: none;
   }
   h3 {
+    font-size: 20px;
     margin:4px 0;
     display: inline;
   }
@@ -48,6 +120,7 @@
       text-decoration: none;
       display: inline;
       margin: 0 4px;
+      font-size: 16px;
     }
   }
   .notes{
