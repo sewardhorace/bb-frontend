@@ -7,7 +7,7 @@
 6 info start incident-tracker@1.0.0
 7 verbose unsafe-perm in lifecycle true
 8 info incident-tracker@1.0.0 Failed to exec start script
-9 verbose stack Error: incident-tracker@1.0.0 start: `node scr/index.js`
+9 verbose stack Error: incident-tracker@1.0.0 start: `node src/index.js`
 9 verbose stack Exit status 1
 9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
 9 verbose stack     at EventEmitter.emit (events.js:110:17)
@@ -22,13 +22,13 @@
 14 error node v0.12.7
 15 error npm  v2.11.3
 16 error code ELIFECYCLE
-17 error incident-tracker@1.0.0 start: `node scr/index.js`
+17 error incident-tracker@1.0.0 start: `node src/index.js`
 17 error Exit status 1
-18 error Failed at the incident-tracker@1.0.0 start script 'node scr/index.js'.
+18 error Failed at the incident-tracker@1.0.0 start script 'node src/index.js'.
 18 error This is most likely a problem with the incident-tracker package,
 18 error not with npm itself.
 18 error Tell the author that this fails on your system:
-18 error     node scr/index.js
+18 error     node src/index.js
 18 error You can get their info via:
 18 error     npm owner ls incident-tracker
 18 error There is likely additional logging output above.

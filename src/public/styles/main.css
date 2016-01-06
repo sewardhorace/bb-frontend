@@ -1,8 +1,1 @@
-.report-form input {
-  border: none;
-  font-size: 14px;
-}
-
-.report{
-  border: 1px solid blue;
-}
+.report-form input{border:none;font-size:14px}.report{border:1px solid blue}.report h3{color:red}

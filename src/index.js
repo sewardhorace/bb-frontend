@@ -1,8 +1,16 @@
 
 var express = require('express');
-var app = express();
+var sassMiddleware = require('node-sass-middleware');
 var path = __dirname+'/public/';
 
+var app = express();
+
+app.use(sassMiddleware({
+    src: __dirname+'/public/styles/',
+    outputStyle: 'compressed',
+    debug: true,
+    prefix: '/static/styles/'
+}));
 app.use('/static', express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
