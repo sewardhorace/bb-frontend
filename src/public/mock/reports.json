@@ -1,7 +1,7 @@
 [
   {
     "title" : "Sample Report",
-    "time" : "10:30",
+    "time" : "1288323623006",
     "author" : "Jim",
     "students" : [
       "Jenny",
@@ -16,7 +16,7 @@
   },
   {
     "title" : "Another Sample Report",
-    "time" : "10:50",
+    "time" : "1288323623006",
     "author" : "Jim",
     "students" : [
       "Leroy"

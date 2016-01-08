@@ -1,39 +1,55 @@
-<div>
-  <div class="new-report-header">New Report:</div>
-
-  <div class="report-form">
-    <a href="" class="save-btn">save</a>
-    <input class="title-input" placeholder="Title"></input>
-    <div class="tags">
-      <a href="" class="add-tag-btn">+tag</a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-xs-12 col-md-8">
+      <h1>Student Incident Tracker</h1>
     </div>
-    <div class="subhead">
-      <span>currentUsername</span>
-      at
-      <input class="time-input" placeholder="(Time)"></input>
-    </div>
-    <div class="students">
-      <strong>Students: </strong>
-        <a href="" class="add-student-btn">+student</a>
-    </div>
-    <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="(add notes)"></input></div>
   </div>
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-xs-12 col-md-8">
 
-  <div class="report" ng-repeat="report in reports">
-    <a href="" class="edit-btn">edit</a>
-    <h3>{{report.title}}</h3>
-    <div class="tags">
-      <a href="" class="tag" ng-repeat="tag in report.tags">{{tag}}</a>
+      <div class="new-report-header">New Report:</div>
+      <div class="report-form">
+        <a href="" class="save-btn">save</a>
+        <input class="title-input" placeholder="Title"></input>
+        <div class="tags">
+          <a href="" class="add-tag-btn">+tag</a>
+        </div>
+        <div class="subhead">
+          <input id="date" class="date-input" type="date"></input>
+          at
+          <input id="time" class="time-input" type="time"></input>
+          , by
+          <span>currentUsername</span>
+        </div>
+        <div class="students">
+          <strong>Students: </strong>
+            <a href="" class="add-student-btn">+student</a>
+        </div>
+        <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="(add notes)"></input></div>
+      </div>
+
+      <div class="report" ng-repeat="report in reports">
+        <a href="" class="edit-btn">edit</a>
+        <h3>{{report.title}}</h3>
+        <div class="tags">
+          <a href="" class="tag" ng-repeat="tag in report.tags">{{tag}}</a>
+        </div>
+        <div class="subhead">
+          <span>{{report.time | date:'MMM d'}}</span>
+          at
+          <span class="time">{{report.time | date:'h:mma'}},</span>
+           by
+          <span>{{report.author}}</span>
+        </div>
+        <div class="students">
+          <strong>Students: </strong>
+            <a href="" class="student" ng-repeat="student in report.students">{{student}}</a>
+        </div>
+        <div class="notes"><strong>Notes: </strong>{{report.description}}</div>
+      </div>
+
     </div>
-    <div class="subhead">
-      <span>{{report.author}}</span>
-      at
-      <span class="time">{{report.time}}</span>
-    </div>
-    <div class="students">
-      <strong>Students: </strong>
-        <a href="" class="student" ng-repeat="student in report.students">{{student}}</a>
-    </div>
-    <div class="notes"><strong>Notes: </strong>{{report.description}}</div>
   </div>
 </div>

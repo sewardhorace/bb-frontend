@@ -7,8 +7,7 @@ body{
   color:#5dcb66;
 }
 .report-form {
-  border: 1px solid #5dcb66;
-  border-radius: 2px;
+  border: 2px solid #5dcb66;
   margin: 6px 0;
   padding: 8px;
   .save-btn{
@@ -23,6 +22,7 @@ body{
     display: inline;
     border: none;
     font-size: 20px;
+    font-weight: bold;
     &:focus {
       outline: none;
     }
@@ -77,8 +77,7 @@ body{
 }
 
 .report {
-  border: 1px solid #808080;
-  border-radius: 2px;
+  border: 2px solid #808080;
   margin: 6px 0;
   padding: 8px;
   .edit-btn {
