@@ -1,1 +1,1 @@
-angular.module("trackerApp", []);
+angular.module("trackerApp", ['ui.bootstrap']);
