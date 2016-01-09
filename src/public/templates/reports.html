@@ -5,9 +5,9 @@
 
       <h1>Student Incident Tracker</h1>
       <div class="new-report-header">New Report:</div>
-      <div class="report-form">
+      <div class="report-form" ng-controller="FormCtrl">
         <a href="" class="save-btn">save</a>
-        <input class="title-input" placeholder="+Title"></input>
+        <input class="title-input" placeholder="{{titlePlaceholder}}" size="{{inputSize}}" ng-model="report.title" ng-change="change(report.title)"></input>
         <div class="tags">
           <a href="" class="add-tag-btn">+tag</a>
         </div>
@@ -23,7 +23,7 @@
           <strong>Students: </strong>
             <a href="" class="add-student-btn">+student</a>
         </div>
-        <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes"></input></div>
+        <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes" ng-model="report.notes"></input></div>
       </div>
 
       <div class="report" ng-repeat="report in reports">

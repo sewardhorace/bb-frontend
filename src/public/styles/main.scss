@@ -34,7 +34,6 @@ body{
     display: inline;
     border: none;
     font-size: 20px;
-    font-weight: bold;
     &:focus {
       outline: none;
     }
@@ -42,14 +41,15 @@ body{
   .tags{
     display: inline;
     .add-tag-btn{
-      display: inline;
+      display: inline-block;
       color:white;
       background-color: #207ac2;
       border-radius: 2px;
       text-decoration: none;
       font-size: 14px;
-      padding:1px 2px;
-      margin:1px 2px;
+      padding:0px 2px;
+      margin:3px 2px;
+      vertical-align: top;
     }
   }
   .subhead{
@@ -62,7 +62,10 @@ body{
         padding:8px;
         height:24px;
         width:64px;
-        border-radius: 4px;
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid black;
+        border-bottom-left-radius: 0px;
         text-align: center;
         display: inline;
       }
@@ -72,17 +75,35 @@ body{
     }
     .uib-timepicker{
       input{
-        padding:8px;
+        padding:0px;
         height: 24px;
+        width:12px;
+        border:none;
+        border-radius: 0px;
+        border-bottom: 1px solid black;
+        box-shadow: none;
       }
       button{
-        padding:2px 10px;
+        padding:0;
+        margin-left: 2px;
         height: 24px;
+        width:34px;
+        border: none;
+        border-radius: 0px;
+        border-bottom: 1px solid black;
+        box-shadow: none;
+        &:focus{
+          background-color: inherit;
+          outline: none;
+        }
+        &:hover{
+          background-color: inherit;
+        }
       }
     }
     span{
       display: inline-block;
-      padding:2px 6px;
+      padding:2px 2px;
       vertical-align: top;
     }
   }
@@ -103,6 +124,7 @@ body{
     .notes-input{
       font-size: 14px;
       border: none;
+      white-space: pre-wrap;
       &:focus {
         outline: none;
       }
@@ -129,14 +151,15 @@ body{
     display: inline;
   }
   .tag{
-    display: inline;
+    display: inline-block;
     text-decoration: none;
     color:white;
     font-size: 14px;
     background-color: #207ac2;
     border-radius: 2px;
-    padding:1px 2px;
-    margin:1px 2px;
+    padding:0px 2px;
+    margin:0px 2px;
+    vertical-align: top;
   }
   .subhead {
     font-size:14px;

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('trackerApp').controller('DateTimePickerCtrl', function ($scope) {
 
   //date stuff
