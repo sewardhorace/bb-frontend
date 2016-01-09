@@ -1,41 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2">&nbsp;</div>
-    <div class="col-xs-12 col-md-8">
-      <h1>Student Incident Tracker</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">&nbsp;</div>
-    <div class="col-xs-12 col-md-8">
+    <div class="main-body col-xs-12 col-md-8">
 
+      <h1>Student Incident Tracker</h1>
       <div class="new-report-header">New Report:</div>
       <div class="report-form">
         <a href="" class="save-btn">save</a>
-        <input class="title-input" placeholder="Title"></input>
+        <input class="title-input" placeholder="+Title"></input>
         <div class="tags">
           <a href="" class="add-tag-btn">+tag</a>
         </div>
-        <div class="subhead" ng-controller="DatepickerCtrl">
-
-          <div class="input-group">
-            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-            <span class="input-group-btn">
-              <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-            </span>
+        <div class="subhead" ng-controller="DateTimePickerCtrl">
+          <div class="input-group date-input">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open1()"/>
           </div>
-
-          <input id="date" class="date-input" type="date"></input>
-          at
-          <input id="time" class="time-input" type="time"></input>
-          , by
-          <span>currentUsername</span>
+          <span>at</span>
+          <uib-timepicker class="time-input"show-spinners="false" ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+          <span>by currentUsername</span>
         </div>
         <div class="students">
           <strong>Students: </strong>
             <a href="" class="add-student-btn">+student</a>
         </div>
-        <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="(add notes)"></input></div>
+        <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes"></input></div>
       </div>
 
       <div class="report" ng-repeat="report in reports">
