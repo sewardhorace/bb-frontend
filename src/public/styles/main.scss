@@ -51,6 +51,21 @@ body{
       margin:3px 2px;
       vertical-align: top;
     }
+    .tag-input{
+      display: inline-block;
+      color:white;
+      background-color: #207ac2;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: 14px;
+      padding:0px 2px;
+      margin:3px 2px;
+      vertical-align: top;
+      border:none;
+      &:focus{
+        outline: none;
+      }
+    }
   }
   .subhead{
     font-size: 14px;
@@ -116,6 +131,17 @@ body{
       display: inline;
       margin: 0 4px;
       font-size: 16px;
+    }
+    .student-input {
+      color:#207ac2;
+      display: inline;
+      margin: 0 4px;
+      font-size: 16px;
+      border:none;
+      padding:0;
+      &:focus{
+        outline:none;
+      }
     }
   }
   .notes{

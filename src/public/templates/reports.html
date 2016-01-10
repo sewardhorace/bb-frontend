@@ -17,10 +17,11 @@
           <uib-timepicker class="time-input"show-spinners="false" ng-model="newReport.time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
           <span>by currentUsername</span>
         </div>
-        <div class="students">
+        <students></students>
+        <!-- <div class="students">
           <strong>Students: </strong>
             <a href="" class="add-student-btn">+student</a>
-        </div>
+        </div> -->
         <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes" ng-model="newReport.notes"></input></div>
       </div>
 
@@ -39,7 +40,7 @@
         </div>
         <div class="students">
           <strong>Students: </strong>
-            <a href="" class="student" ng-repeat="student in report.students">{{student}}</a>
+          <a href="" class="student" ng-repeat="student in report.students">{{student}}</a>
         </div>
         <div class="notes"><strong>Notes: </strong>{{report.description}}</div>
       </div>

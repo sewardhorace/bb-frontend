@@ -1,0 +1,5 @@
+<div class="students">
+  <strong>Students: </strong>
+  <input ng-repeat="student in newReport.students track by $index" ng-model="newReport.students[$index]" ng-change="change($index)" type="text" placeholder="Name" class="student-input"/>
+  <a href="" class="add-student-btn" ng-click="addStudent()">+student</a>
+</div>
