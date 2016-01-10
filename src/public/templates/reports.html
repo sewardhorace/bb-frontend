@@ -6,24 +6,22 @@
       <h1>Student Incident Tracker</h1>
       <div class="new-report-header">New Report:</div>
       <div class="report-form" ng-controller="FormCtrl">
-        <a href="" class="save-btn">save</a>
-        <input class="title-input" placeholder="{{titlePlaceholder}}" size="{{inputSize}}" ng-model="report.title" ng-change="change(report.title)"></input>
-        <div class="tags">
-          <a href="" class="add-tag-btn">+tag</a>
-        </div>
+        <a href="" class="save-btn" ng-click="save()">save</a>
+        <input class="title-input" placeholder="{{titlePlaceholder}}" size="{{inputSize}}" ng-model="newReport.title" ng-change="change(newReport.title)"></input>
+        <tags></tags>
         <div class="subhead" ng-controller="DateTimePickerCtrl">
           <div class="input-group date-input">
-            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open1()"/>
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="newReport.date" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open1()"/>
           </div>
           <span>at</span>
-          <uib-timepicker class="time-input"show-spinners="false" ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+          <uib-timepicker class="time-input"show-spinners="false" ng-model="newReport.time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
           <span>by currentUsername</span>
         </div>
         <div class="students">
           <strong>Students: </strong>
             <a href="" class="add-student-btn">+student</a>
         </div>
-        <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes" ng-model="report.notes"></input></div>
+        <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes" ng-model="newReport.notes"></input></div>
       </div>
 
       <div class="report" ng-repeat="report in reports">

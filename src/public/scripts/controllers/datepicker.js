@@ -2,14 +2,16 @@
 
 angular.module('trackerApp').controller('DateTimePickerCtrl', function ($scope) {
 
+  $scope.newReport = $scope.$parent.newReport;
+
   //date stuff
   $scope.today = function() {
-    $scope.dt = new Date();
+    $scope.newReport.date = new Date();
   };
   $scope.today();
 
   $scope.clear = function() {
-    $scope.dt = null;
+    $scope.newReport.date = null;
   };
 
   // Disable weekend selection
@@ -33,7 +35,7 @@ angular.module('trackerApp').controller('DateTimePickerCtrl', function ($scope) 
   };
 
   $scope.setDate = function(year, month, day) {
-    $scope.dt = new Date(year, month, day);
+    $scope.newReport.date = new Date(year, month, day);
   };
 
   $scope.dateOptions = {
@@ -89,8 +91,8 @@ angular.module('trackerApp').controller('DateTimePickerCtrl', function ($scope) 
 
   //time stuff
   var coeff = 1000 * 60 * 5;
-  $scope.mytime = new Date();
-  $scope.mytime = new Date(Math.round($scope.mytime.getTime() / coeff) * coeff);
+  $scope.newReport.time = new Date();
+  $scope.newReport.time = new Date(Math.round($scope.newReport.time.getTime() / coeff) * coeff);
 
   $scope.hstep = 1;
   $scope.mstep = 5;
@@ -109,7 +111,7 @@ angular.module('trackerApp').controller('DateTimePickerCtrl', function ($scope) 
     var d = new Date();
     d.setHours( 14 );
     d.setMinutes( 0 );
-    $scope.mytime = d;
+    $scope.newReport.time = d;
   };
 
   $scope.changed = function () {
@@ -117,6 +119,6 @@ angular.module('trackerApp').controller('DateTimePickerCtrl', function ($scope) 
   };
 
   $scope.clear = function() {
-    $scope.mytime = null;
+    $scope.newReport.time = null;
   };
 });

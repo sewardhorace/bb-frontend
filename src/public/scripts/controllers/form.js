@@ -1,7 +1,11 @@
 'use strict';
 
-angular.module('trackerApp').controller('FormCtrl', function ($scope) {
+angular.module('trackerApp')
+.controller('FormCtrl', function ($scope) {
 
+  $scope.newReport = {};
+
+  //title
   $scope.titlePlaceholder = "+Title";
   $scope.inputSize = $scope.titlePlaceholder.length;
   $scope.change = function(text){
@@ -14,5 +18,10 @@ angular.module('trackerApp').controller('FormCtrl', function ($scope) {
     } else {
       $scope.inputSize = text.length + 1;
     }
+  };
+
+
+  $scope.save = function(){
+    console.log($scope.newReport);
   };
 });
