@@ -10,8 +10,8 @@
     ],
     "description" : "Lermon Ispasn",
     "tags" : [
-      "#Behavior",
-      "#Homicide"
+      "Behavior",
+      "Homicide"
     ]
   },
   {
@@ -23,7 +23,7 @@
     ],
     "description" : "barfing",
     "tags" : [
-      "#illness"
+      "illness"
     ]
   }
 ]

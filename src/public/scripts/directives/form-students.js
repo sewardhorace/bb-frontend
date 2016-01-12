@@ -11,7 +11,7 @@ angular.module('trackerApp')
 
       scope.change = function(idx){
         console.log(scope.newReport.students[idx]);
-      }
+      };
 
       scope.addStudent = function(){
         scope.newReport.students.push("");
