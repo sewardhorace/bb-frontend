@@ -1,4 +1,8 @@
 <div class="tags">
-  <input ng-repeat="tag in newReport.tags track by $index" ng-model="newReport.tags[$index]" ng-change="change($index)" type="text" value="#example" class="tag-input"/>
+  <div ng-repeat="tag in newReport.tags track by $index" class="form-tag">
+    <span class="tag-hash">#</span>
+    <input ng-model="newReport.tags[$index]" ng-change="change($index)" type="text" class="tag-input"/>
+    <span class="glyphicon glyphicon-remove" ng-click="removeTag($index)"></span>
+  </div>
   <a class="add-tag-btn" href="" ng-click="addTag()">+tag</a>
 </div>

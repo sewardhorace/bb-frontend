@@ -51,19 +51,40 @@ body{
       margin:3px 2px;
       vertical-align: top;
     }
-    .tag-input{
+    .form-tag{
       display: inline-block;
-      color:white;
+      vertical-align: top;
       background-color: #207ac2;
       border-radius: 2px;
-      text-decoration: none;
-      font-size: 14px;
-      padding:0px 2px;
+      padding:0px;
       margin:3px 2px;
       vertical-align: top;
-      border:none;
-      &:focus{
-        outline: none;
+      .tag-hash{
+        color:white;
+        margin-left:2px;
+        margin-right:-4px;
+        display: inline-block;
+      }
+      .tag-input{
+        display: inline-block;
+        color:white;
+        background-color: #207ac2;
+        text-decoration: none;
+        font-size: 14px;
+        padding:0px 0px;
+        vertical-align: top;
+        border:none;
+        &:focus{
+          outline: none;
+        }
+      }
+      .glyphicon-remove{
+        color:white;
+        margin-left:-18px;
+        margin-top:2px;
+        vertical-align: top;
+        display: inline-block;
+        cursor:pointer;
       }
     }
   }
