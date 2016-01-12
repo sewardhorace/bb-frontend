@@ -15,7 +15,9 @@ angular.module('trackerApp')
 
       scope.addStudent = function(){
         scope.newReport.students.push("");
-        console.log("added student");
+      };
+      scope.removeStudent = function(idx){
+        scope.newReport.students.splice(idx, 1);
       };
     }
   };

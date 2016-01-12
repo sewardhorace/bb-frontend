@@ -153,17 +153,33 @@ body{
       margin: 0 4px;
       font-size: 16px;
     }
-    .student-input {
-      color:#207ac2;
-      display: inline;
-      margin: 0 4px;
-      font-size: 16px;
-      border:none;
-      padding:0;
-      &:focus{
-        outline:none;
+    .form-student{
+      display:inline-block;
+      .student-input {
+        color:#207ac2;
+        display: inline;
+        margin: 0 4px;
+        font-size: 16px;
+        border:none;
+        padding:0;
+        &:focus{
+          outline:none;
+        }
+      }
+      .glyphicon-remove{
+        vertical-align: top;
+        display: inline-block;
+        margin-top:-4px;
+        margin-left:-10px;
+        color:#808080;;
+        font-size:14px;
+        padding:2px;
+        cursor:pointer;
+        // background-color: #207ac2;
+        // border-radius: 10px;
       }
     }
+
   }
   .notes{
     font-size: 14px;

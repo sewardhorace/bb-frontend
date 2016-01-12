@@ -1,5 +1,8 @@
 <div class="students">
   <strong>Students: </strong>
-  <input ng-repeat="student in newReport.students track by $index" ng-model="newReport.students[$index]" ng-change="change($index)" type="text" placeholder="Name" class="student-input"/>
-  <a href="" class="add-student-btn" ng-click="addStudent()">+student</a>
+  <div ng-repeat="student in newReport.students track by $index" class="form-student">
+    <input  ng-model="newReport.students[$index]" ng-change="change($index)" type="text" placeholder="Name" class="student-input"/>
+    <span class="glyphicon glyphicon-remove" ng-click="removeStudent()"></span>
+  </div>
+  <a href="" class="add-student-btn" ng-click="addStudent($index)">+student</a>
 </div>
