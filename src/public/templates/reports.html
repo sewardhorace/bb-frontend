@@ -15,7 +15,7 @@
           </div>
           <span>at</span>
           <uib-timepicker class="time-input"show-spinners="false" ng-model="newReport.time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
-          <span>by currentUsername</span>
+          <span>by {{currentUser.name}}</span>
         </div>
         <students></students>
         <!-- <div class="students">
