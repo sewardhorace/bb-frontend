@@ -9,10 +9,6 @@ angular.module('trackerApp')
       console.log("loaded student directive");
       scope.newReport.students = [];
 
-      scope.change = function(idx){
-        console.log(scope.newReport.students[idx]);
-      };
-
       scope.addStudent = function(){
         scope.newReport.students.push("");
       };

@@ -12,15 +12,23 @@ angular.module('trackerApp')
   $scope.titlePlaceholder = "+Title";
   $scope.inputSize = $scope.titlePlaceholder.length;
   $scope.change = function(text){
-    // var p = angular.element(document.createElement('p'));
-    // p.text(text);
-    // console.log(p.text());
+    var p = angular.element(document.createElement('p'));
+    p.text(text);
+    p.addClass('title-width');
+    console.log(p);
+    var form = angular.element(document.getElementById('form'));
+    form.append(p);
+    console.log(p[0].clientWidth);
+    var width = p[0].clientWidth;
+    var input = angular.element(document.getElementsByClassName('title-input'));
+    input.css("width", width+4+"px");
+    p.remove();
 
-    if (text.length === 0){
-      $scope.inputSize = $scope.titlePlaceholder.length;
-    } else {
-      $scope.inputSize = text.length + 1;
-    }
+    // if (text.length === 0){
+    //   $scope.inputSize = $scope.titlePlaceholder.length;
+    // } else {
+    //   $scope.inputSize = text.length + 1;
+    // }
   };
 
 

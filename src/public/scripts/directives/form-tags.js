@@ -9,9 +9,6 @@ angular.module('trackerApp')
       console.log("loaded tag directive");
       scope.newReport.tags = [];
 
-      scope.change = function(idx){
-        console.log(scope.newReport.tags[idx]);
-      };
       scope.addTag = function(){
         scope.newReport.tags.push("");
         console.log("added tag");
