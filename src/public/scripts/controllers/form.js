@@ -8,27 +8,28 @@ angular.module('trackerApp')
     name:"Username"
   };
 
-  //title
-  $scope.titlePlaceholder = "+Title";
-  $scope.inputSize = $scope.titlePlaceholder.length;
-  $scope.change = function(text){
+  $scope.change = function(className,idx){
+    //render the text in a <p> element to get its width, then remove the <p> element
     var p = angular.element(document.createElement('p'));
-    p.text(text);
-    p.addClass('title-width');
-    console.log(p);
+    var input;
+
+    if (className === 'title-input'){
+      p.text($scope.newReport.title);
+      p.addClass('title-width');
+      input = angular.element(document.getElementsByClassName(className));
+
+    } else if (className === 'tag-input'){
+      p.text($scope.newReport.tags[idx]);
+      p.addClass('tag-width');
+      input = angular.element(document.getElementsByClassName(className)[idx]);
+
+    }
+
     var form = angular.element(document.getElementById('form'));
     form.append(p);
-    console.log(p[0].clientWidth);
     var width = p[0].clientWidth;
-    var input = angular.element(document.getElementsByClassName('title-input'));
     input.css("width", width+4+"px");
     p.remove();
-
-    // if (text.length === 0){
-    //   $scope.inputSize = $scope.titlePlaceholder.length;
-    // } else {
-    //   $scope.inputSize = text.length + 1;
-    // }
   };
 
 

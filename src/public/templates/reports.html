@@ -7,7 +7,7 @@
       <div class="new-report-header">New Report:</div>
       <div class="report-form" ng-controller="FormCtrl" id="form">
         <a href="" class="save-btn" ng-click="save()">save</a>
-        <input class="title-input" placeholder="{{titlePlaceholder}}" size="{{inputSize}}" ng-model="newReport.title" ng-change="change(newReport.title)" ng-trim="false"></input>
+        <input class="title-input" placeholder="+Title" ng-model="newReport.title" ng-change="change('title-input')" ng-trim="false"></input>
         <tags></tags>
         <div class="subhead" ng-controller="DateTimePickerCtrl">
           <div class="input-group date-input">

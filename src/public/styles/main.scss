@@ -22,6 +22,16 @@ body{
   border: 2px solid #5dcb66;
   margin: 6px 0;
   padding: 8px;
+  p.title-width{
+    font-size: 20px;
+    display: inline-block;
+    white-space: pre;
+  }
+  p.tag-width{
+    font-size: 14px;
+    display: inline-block;
+    white-space: pre;
+  }
   .save-btn{
     display: block;
     float: right;
@@ -38,11 +48,6 @@ body{
     &:focus {
       outline: none;
     }
-  }
-  p.title-width{
-    font-size: 20px;
-    display: inline-block;
-    white-space: pre;
   }
   .tags{
     display: inline;
@@ -72,12 +77,15 @@ body{
         display: inline-block;
       }
       .tag-input{
+        width: 28px;
+        min-width: 28px;
         display: inline-block;
         color:white;
         background-color: #207ac2;
         text-decoration: none;
         font-size: 14px;
-        padding:0px 0px;
+        padding:0px;
+        margin-right: 16px;
         vertical-align: top;
         border:none;
         &:focus{
