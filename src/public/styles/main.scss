@@ -230,8 +230,11 @@ body{
       padding:0 2px;
       font-size: 14px;
       border-radius:2px;
-      color:#757575;
+      color:#a2a2a2;
       background-color:black;
+      &:hover{
+        color:white;
+      }
     }
   }
 }
