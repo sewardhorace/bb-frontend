@@ -214,6 +214,26 @@ body{
       }
     }
   }
+  .room{
+    margin-top:2px;
+    input[type=radio] {
+      display: none;
+    }
+    input[type=radio]:checked + label{
+      color:white;
+    }
+    label{
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      font-weight: normal;
+      padding:0 2px;
+      font-size: 14px;
+      border-radius:2px;
+      color:#757575;
+      background-color:black;
+    }
+  }
 }
 
 .report {
@@ -252,6 +272,15 @@ body{
   }
   strong {
     font-size: 14px;
+  }
+  .room{
+    margin:2px 0;
+    font-size: 14px;
+    color:white;
+    background-color: black;
+    border-radius: 2px;
+    display: inline-block;
+    padding:0 2px;
   }
   .students{
     margin:2px 0;

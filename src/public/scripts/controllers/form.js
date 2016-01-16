@@ -7,6 +7,18 @@ angular.module('trackerApp')
   $scope.currentUser = {
     name:"Username"
   };
+  $scope.redRoom = {
+    name:'Red',
+    hexColor:'#A3372C'
+  };
+  $scope.blueRoom = {
+    name:'Blue',
+    hexColor:'#093455'
+  };
+  $scope.purpleRoom = {
+    name:'Purple',
+    hexColor:'#643275'
+  };
 
   $scope.change = function(className,idx){
     //render the text in a <p> element to get its width, then remove the <p> element
@@ -43,13 +55,14 @@ angular.module('trackerApp')
     var date = $scope.newReport.date;
     var time = $scope.newReport.time;
     var report = {
-      title:$scope.newReport.title,
+      title:$scope.newReport.title.text,
       time: new Date(date.getFullYear(), date.getMonth(), date.getDate(),
                time.getHours(), time.getMinutes(), time.getSeconds()),
       author:$scope.currentUser.name,
       students:$scope.newReport.students,
       description:$scope.newReport.notes,
-      tags:$scope.newReport.tags
+      tags:$scope.newReport.tags,
+      room:$scope.newReport.room
     };
     $scope.$parent.reports.push(report);
     $scope.newReport = {
@@ -58,7 +71,8 @@ angular.module('trackerApp')
       time: new Date(),
       students: [],
       tags: [],
-      notes: ""
+      notes: "",
+      room:null
     };
   };
 });

@@ -18,11 +18,16 @@
           <span>by {{currentUser.name}}</span>
         </div>
         <students></students>
-        <!-- <div class="students">
-          <strong>Students: </strong>
-            <a href="" class="add-student-btn">+student</a>
-        </div> -->
         <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes" ng-model="newReport.notes"></input></div>
+        <div class="room">
+          <strong>Room: </strong>
+          <input id="red" type="radio" ng-model="newReport.room" ng-value="redRoom"/>
+          <label for="red" ng-style="{'background-color':redRoom.hexColor}">Red</label>
+          <input id="purple" type="radio" ng-model="newReport.room" ng-value="purpleRoom"/>
+          <label for="purple" ng-style="{'background-color':purpleRoom.hexColor}">Purple</label>
+          <input id="blue" type="radio" ng-model="newReport.room" ng-value="blueRoom"/>
+          <label for="blue" ng-style="{'background-color':blueRoom.hexColor}">Blue</lable>
+        </div>
       </div>
 
 
@@ -43,9 +48,11 @@
         </div>
         <div class="students">
           <strong>Students: </strong>
-          <a href="" class="student" ng-repeat="student in report.students">{{student}}</a>
+          <a href="" class="student" ng-repeat="student in report.students">{{student.name}}</a>
         </div>
         <div class="notes"><strong>Notes: </strong>{{report.description}}</div>
+        <div class="room" ng-style="{'background-color':report.room.hexColor}">
+          {{report.room.name}} room</div>
       </div>
 
     </div>

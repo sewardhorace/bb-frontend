@@ -3,10 +3,20 @@
     "title" : "Sample Report",
     "time" : "1288323623006",
     "author" : "Jim",
+    "room" : {
+      "name":"Red",
+      "hexColor":"#A3372C"
+    },
     "students" : [
-      "Jenny",
-      "Leroy",
-      "Tim"
+      {
+        "name":"Jenny"
+      },
+      {
+        "name":"Leroy"
+      },
+      {
+        "name":"Tim"
+      }
     ],
     "description" : "Lermon Ispasn",
     "tags" : [
@@ -18,8 +28,14 @@
     "title" : "Another Sample Report",
     "time" : "1288323623006",
     "author" : "Jim",
+    "room" : {
+      "name":"Blue",
+      "hexColor":"#093455"
+    },
     "students" : [
-      "Leroy"
+      {
+        "name":"Leroy"
+        }
     ],
     "description" : "barfing",
     "tags" : [
