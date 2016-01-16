@@ -15,6 +15,7 @@ body{
 
 .new-report-header{
   margin:4px;
+  margin-top: 0;
   margin-bottom: -6px;
   color:#5dcb66;
 }
@@ -298,6 +299,12 @@ body{
   .notes{
     margin:2px 0;
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width : 480px){
+  h1{
+    font-size: 28px;
   }
 }
 

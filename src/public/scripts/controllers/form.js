@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trackerApp')
-.controller('FormCtrl', function ($scope) {
+.controller('formCtrl', function ($scope) {
 
   $scope.newReport = {};
   $scope.currentUser = {
