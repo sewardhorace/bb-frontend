@@ -39,7 +39,7 @@
 
 
 
-      <div class="report" ng-repeat="report in reports">
+      <div class="report" ng-repeat="report in reports | filter:filter">
         <a href="" class="edit-btn">edit</a>
         <h3>{{report.title}}</h3>
         <div class="tags">

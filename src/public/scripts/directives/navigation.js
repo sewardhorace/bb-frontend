@@ -11,7 +11,10 @@ angular.module('trackerApp')
 
       scope.newReportClicked = function(){
         scope.reportFormCollapsed = !scope.reportFormCollapsed;
-        console.log("clickity");
+      }
+
+      scope.filterReports = function(room){
+        scope.filter = room;
       }
     }
   };
