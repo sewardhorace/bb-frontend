@@ -10,7 +10,7 @@ angular.module('trackerApp')
       scope.newReport.students = [];
 
       scope.addStudent = function(){
-        scope.newReport.students.push("");
+        scope.newReport.students.push({});
       };
       scope.removeStudent = function(idx){
         scope.newReport.students.splice(idx, 1);

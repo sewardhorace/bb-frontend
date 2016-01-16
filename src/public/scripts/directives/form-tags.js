@@ -10,11 +10,9 @@ angular.module('trackerApp')
       scope.newReport.tags = [];
 
       scope.addTag = function(){
-        scope.newReport.tags.push("");
-        console.log("added tag");
+        scope.newReport.tags.push({});
       };
       scope.removeTag = function(idx){
-        console.log('baleted');
         scope.newReport.tags.splice(idx, 1);
       };
     }

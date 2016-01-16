@@ -11,28 +11,30 @@ angular.module('trackerApp')
   $scope.change = function(className,idx){
     //render the text in a <p> element to get its width, then remove the <p> element
     var p = angular.element(document.createElement('p'));
-    var input;
+    var form = angular.element(document.getElementById('form'));
+    var width;
 
     if (className === 'title-input'){
-      p.text($scope.newReport.title);
+      p.text($scope.newReport.title.text);
       p.addClass('title-width');
-      input = angular.element(document.getElementsByClassName(className));
+      form.append(p);
+      width = p[0].clientWidth;
+      $scope.newReport.title.style = {'width':width+4+'px'};
 
     } else if (className === 'tag-input'){
-      p.text($scope.newReport.tags[idx]);
+      p.text($scope.newReport.tags[idx].text);
       p.addClass('tag-width');
-      input = angular.element(document.getElementsByClassName(className)[idx]);
+      form.append(p);
+      width = p[0].clientWidth;
+      $scope.newReport.tags[idx].style = {'width':width+4+'px'};
 
     } else if (className === 'student-input'){
-      p.text($scope.newReport.students[idx]);
+      p.text($scope.newReport.students[idx].text);
       p.addClass('student-width');
-      input = angular.element(document.getElementsByClassName(className)[idx]);
+      form.append(p);
+      width = p[0].clientWidth;
+      $scope.newReport.students[idx].style = {'width':width+4+'px'};
     }
-
-    var form = angular.element(document.getElementById('form'));
-    form.append(p);
-    var width = p[0].clientWidth;
-    input.css("width", width+4+"px");
     p.remove();
   };
 
