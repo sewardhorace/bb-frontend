@@ -1,3 +1,8 @@
+$red-room-color: #A3372C;
+$purple-room-color:#643275;
+$blue-room-color:#093455;
+
+
 .navigation{
   margin:8px 0;
   li{
@@ -14,6 +19,15 @@
       padding:4px 8px;
       border-radius: 2px;
       margin:2px 0px;
+      &.red{
+        background-color: $red-room-color;
+      }
+      &.blue{
+        background-color: $blue-room-color;
+      }
+      &.purple{
+        background-color: $purple-room-color;
+      }
     }
     .new-report-btn{
       font-size: 16px;
