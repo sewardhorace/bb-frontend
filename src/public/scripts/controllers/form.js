@@ -23,6 +23,10 @@ angular.module('trackerApp')
       p.addClass('tag-width');
       input = angular.element(document.getElementsByClassName(className)[idx]);
 
+    } else if (className === 'student-input'){
+      p.text($scope.newReport.students[idx]);
+      p.addClass('student-width');
+      input = angular.element(document.getElementsByClassName(className)[idx]);
     }
 
     var form = angular.element(document.getElementById('form'));

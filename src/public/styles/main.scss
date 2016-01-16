@@ -32,6 +32,11 @@ body{
     display: inline-block;
     white-space: pre;
   }
+  p.student-width{
+    font-size: 16px;
+    display: inline-block;
+    white-space: pre;
+  }
   .save-btn{
     display: block;
     float: right;
@@ -176,6 +181,8 @@ body{
         font-size: 16px;
         border:none;
         padding:0;
+        width:48px;
+        min-width:48px;
         &:focus{
           outline:none;
         }
