@@ -16,15 +16,15 @@ angular.module('trackerApp').controller('DateTimePickerCtrl', function ($scope) 
 
   // Disable weekend selection
   $scope.disabled = function(date, mode) {
-    return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+    // return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
   };
 
   $scope.toggleMin = function() {
     $scope.minDate = $scope.minDate ? null : new Date();
   };
 
-  $scope.toggleMin();
-  $scope.maxDate = new Date(2020, 5, 22);
+  // $scope.toggleMin();
+  $scope.maxDate = new Date();
 
   $scope.open1 = function() {
     $scope.popup1.opened = true;
