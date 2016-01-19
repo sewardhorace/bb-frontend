@@ -14,7 +14,11 @@ angular.module('trackerApp')
       }
 
       scope.filterReports = function(room){
-        scope.filter = room;
+        if (scope.filter === room){
+          scope.filter = "";
+        } else {
+          scope.filter = room;
+        }
       }
     }
   };
