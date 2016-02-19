@@ -5,4 +5,9 @@ angular.module("trackerApp")
   dataService.getReports(function(response){
     $scope.reports = response.data;
   });
+  $scope.submitReport = dataService.submitReport;
+  $scope.currentUser = {
+    username: "User2",
+    auth_token: "85jKZd_TR5SFXUy6k1E-"
+  };
 });

@@ -4,9 +4,9 @@ angular.module('trackerApp')
 .controller('formCtrl', function ($scope) {
 
   $scope.newReport = {};
-  $scope.currentUser = {
-    name:"Username"
-  };
+  // $scope.currentUser = {
+  //   name:"Username"
+  // }; //already defined in main.js
   $scope.redRoom = {
     name:'Red',
     hexColor:'#A3372C'
@@ -58,13 +58,23 @@ angular.module('trackerApp')
       title:$scope.newReport.title.text,
       time: new Date(date.getFullYear(), date.getMonth(), date.getDate(),
                time.getHours(), time.getMinutes(), time.getSeconds()),
-      author:$scope.currentUser.name,
-      students:$scope.newReport.students,
+      students:[],
       description:$scope.newReport.notes,
-      tags:$scope.newReport.tags,
-      room:$scope.newReport.room
+      // tags:$scope.newReport.tags,
+      // room:$scope.newReport.room
     };
+
+    console.log("saved button clicked");
+    var data = {
+      "report":report
+    };
+    // console.log(data);
+    $scope.submitReport($scope.currentUser, data, function(response){
+      console.log(response);
+    });
+
     $scope.$parent.reports.push(report);
+
     $scope.newReport = {
       title:"",
       date: new Date(),

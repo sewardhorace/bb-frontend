@@ -12,17 +12,15 @@
         <div class="report-form" ng-controller="formCtrl" id="form">
           <a href="" class="save-btn" ng-click="save()">save</a>
           <input class="title-input" placeholder="+Title" ng-model="newReport.title.text" ng-change="change('title-input')" ng-trim="false" ng-style="newReport.title.style"></input>
-          <tags></tags>
+          <!-- <tags></tags> -->
           <div class="subhead" ng-controller="DateTimePickerCtrl">
             <div class="input-group date-input">
               <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="newReport.date" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open1()"/>
             </div>
             <span>at</span>
             <uib-timepicker class="time-input"show-spinners="false" ng-model="newReport.time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
-            <span>by {{currentUser.name}}</span>
+            <span>by {{currentUser.username}}</span>
           </div>
-          <students></students>
-          <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes" ng-model="newReport.notes"></input></div>
           <div class="room">
             <strong>Room: </strong>
             <input id="red" type="radio" ng-model="newReport.room" ng-value="redRoom"/>
@@ -32,6 +30,8 @@
             <input id="blue" type="radio" ng-model="newReport.room" ng-value="blueRoom"/>
             <label for="blue" ng-style="{'background-color':blueRoom.hexColor}">Blue</lable>
           </div>
+          <students></students>
+          <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes" ng-model="newReport.notes"></input></div>
         </div>
 
       </div>
@@ -39,18 +39,18 @@
 
 
 
-      <div class="report" ng-repeat="report in reports | filter:filter">
+      <div class="report" ng-repeat="report in reports | orderBy:'-time'  | filter:filter">
         <a href="" class="edit-btn">edit</a>
         <h3>{{report.title}}</h3>
-        <div class="tags">
+        <!-- <div class="tags">
           <a href="" class="tag" ng-repeat="tag in report.tags">#{{tag}}</a>
-        </div>
+        </div> -->
         <div class="subhead">
           <span>{{report.time | date:'MMM d'}}</span>
           at
           <span class="time">{{report.time | date:'h:mma'}},</span>
            by
-          <span>{{report.author}}</span>
+          <span>{{report.user.username}}</span>
         </div>
         <div class="students">
           <strong>Students: </strong>

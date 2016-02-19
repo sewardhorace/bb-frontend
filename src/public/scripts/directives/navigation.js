@@ -6,12 +6,11 @@ angular.module('trackerApp')
     templateUrl:'static/templates/navigation.html',
     replace: true,
     link: function(scope, elem, attrs){
-      console.log("loaded nav directive");
       scope.reportFormCollapsed = true;
 
       scope.newReportClicked = function(){
         scope.reportFormCollapsed = !scope.reportFormCollapsed;
-      }
+      };
 
       scope.filterReports = function(room){
         if (scope.filter === room){
@@ -19,7 +18,7 @@ angular.module('trackerApp')
         } else {
           scope.filter = room;
         }
-      }
+      };
     }
   };
 });
