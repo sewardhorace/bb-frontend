@@ -2,10 +2,6 @@
 
 angular.module('trackerApp')
 .service('dataService', function($http){
-  // this.getReports = function(callback){
-  //   $http.get('static/mock/reports.json')
-  //   .then(callback);
-  // },
   this.getReports = function(callback){
     $http.get('http://localhost:3000/api/v1/reports.json')
     .then(callback);
@@ -21,5 +17,13 @@ angular.module('trackerApp')
       data: report
     };
     $http(req).then(callback);
+  };
+  this.getStudents = function(callback){
+    $http.get('http://localhost:3000/api/v1/students.json')
+    .then(callback);
+  };
+  this.getRooms = function(callback){
+    $http.get('http://localhost:3000/api/v1/rooms.json')
+    .then(callback);
   };
 });

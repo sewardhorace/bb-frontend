@@ -3,22 +3,23 @@
 angular.module('trackerApp')
 .controller('formCtrl', function ($scope) {
 
-  $scope.newReport = {};
-  // $scope.currentUser = {
-  //   name:"Username"
-  // }; //already defined in main.js
-  $scope.redRoom = {
-    name:'Red',
-    hexColor:'#A3372C'
+  $scope.newReport = {
+    title: "",
+    room: {}
   };
-  $scope.blueRoom = {
-    name:'Blue',
-    hexColor:'#093455'
-  };
-  $scope.purpleRoom = {
-    name:'Purple',
-    hexColor:'#643275'
-  };
+
+  // $scope.redRoom = {
+  //   name:'Red',
+  //   hexColor:'#A3372C'
+  // };
+  // $scope.blueRoom = {
+  //   name:'Blue',
+  //   hexColor:'#093455'
+  // };
+  // $scope.purpleRoom = {
+  //   name:'Purple',
+  //   hexColor:'#643275'
+  // };
 
   $scope.change = function(className,idx){
     //render the text in a <p> element to get its width, then remove the <p> element
@@ -52,6 +53,7 @@ angular.module('trackerApp')
 
 
   $scope.save = function(){
+    console.log("saved button clicked");
     var date = $scope.newReport.date;
     var time = $scope.newReport.time;
     var report = {
@@ -60,20 +62,19 @@ angular.module('trackerApp')
                time.getHours(), time.getMinutes(), time.getSeconds()),
       students:[],
       description:$scope.newReport.notes,
-      // tags:$scope.newReport.tags,
-      // room:$scope.newReport.room
+      room:$scope.newReport.room,
+      // tags:$scope.newReport.tags
     };
 
-    console.log("saved button clicked");
+    console.log(report);
     var data = {
       "report":report
     };
-    // console.log(data);
-    $scope.submitReport($scope.currentUser, data, function(response){
-      console.log(response);
-    });
+    // $scope.submitReport($scope.currentUser, data, function(response){
+    //   console.log(response);
+    // });
 
-    $scope.$parent.reports.push(report);
+    $scope.$parent.reports.unshift(report);
 
     $scope.newReport = {
       title:"",

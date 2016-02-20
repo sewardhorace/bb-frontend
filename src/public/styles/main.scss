@@ -218,14 +218,7 @@ body{
   }
   .room{
     margin-top:2px;
-    input[type=radio] {
-      display: none;
-    }
-    input[type=radio]:checked + label{
-      color:white;
-    }
     label{
-      display: inline-block;
       cursor: pointer;
       position: relative;
       font-weight: normal;
@@ -235,6 +228,12 @@ body{
       color:#a2a2a2;
       background-color:black;
       &:hover{
+        color:white;
+      }
+      input[type=radio] {
+        display: none;
+      }
+      input[type=radio]:checked + span{
         color:white;
       }
     }

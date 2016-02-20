@@ -21,7 +21,8 @@
             <uib-timepicker class="time-input"show-spinners="false" ng-model="newReport.time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
             <span>by {{currentUser.username}}</span>
           </div>
-          <div class="room">
+          <rooms></rooms>
+          <!-- <div class="rooms">
             <strong>Room: </strong>
             <input id="red" type="radio" ng-model="newReport.room" ng-value="redRoom"/>
             <label for="red" ng-style="{'background-color':redRoom.hexColor}">Red</label>
@@ -29,7 +30,7 @@
             <label for="purple" ng-style="{'background-color':purpleRoom.hexColor}">Purple</label>
             <input id="blue" type="radio" ng-model="newReport.room" ng-value="blueRoom"/>
             <label for="blue" ng-style="{'background-color':blueRoom.hexColor}">Blue</lable>
-          </div>
+          </div> -->
           <students></students>
           <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes" ng-model="newReport.notes"></input></div>
         </div>
