@@ -5,6 +5,7 @@ Facilitate communication about student incidents between employees across shifts
 
 Todo:
 
+bug: since report time is rounded to nearest 5 min, subsequently created reports can appear out of order if their time is the same.
 X api communication
 logging in users
 add editing of reports

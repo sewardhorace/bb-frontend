@@ -65,25 +65,25 @@ angular.module('trackerApp')
       room:$scope.newReport.room,
       // tags:$scope.newReport.tags
     };
-
-    console.log(report);
     var data = {
       "report":report
     };
-    // $scope.submitReport($scope.currentUser, data, function(response){
-    //   console.log(response);
-    // });
-
-    $scope.$parent.reports.unshift(report);
-
-    $scope.newReport = {
-      title:"",
-      date: new Date(),
-      time: new Date(),
-      students: [],
-      tags: [],
-      notes: "",
-      room:null
-    };
+    $scope.submitReport($scope.currentUser, data, function(response){
+      console.log(response.statusText);
+      if (response.status === 201){
+        $scope.$parent.reports.push(response.data.report);
+        $scope.newReport = {
+          title:"",
+          date: new Date(),
+          time: new Date(),
+          students: [],
+          tags: [],
+          notes: "",
+          room:null
+        };
+      } else {
+        console.log("Record not created");
+      }
+    });
   };
 });
