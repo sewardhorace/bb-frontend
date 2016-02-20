@@ -62,7 +62,7 @@ angular.module('trackerApp')
                time.getHours(), time.getMinutes(), time.getSeconds()),
       students:[],
       description:$scope.newReport.notes,
-      room:$scope.newReport.room,
+      room_id:$scope.newReport.room.id,
       // tags:$scope.newReport.tags
     };
     var data = {
