@@ -22,6 +22,7 @@ angular.module('trackerApp')
   // };
 
   $scope.change = function(className,idx){
+    console.log("changed");
     //render the text in a <p> element to get its width, then remove the <p> element
     var p = angular.element(document.createElement('p'));
     var form = angular.element(document.getElementById('form'));
@@ -42,10 +43,15 @@ angular.module('trackerApp')
       $scope.newReport.tags[idx].style = {'width':width+4+'px'};
 
     } else if (className === 'student-input'){
-      p.text($scope.newReport.students[idx].text);
-      p.addClass('student-width');
-      form.append(p);
-      width = p[0].clientWidth;
+      var text = $scope.newReport.students[idx].name
+      if (text.length > 0){
+        p.text(text);
+        p.addClass('student-width');
+        form.append(p);
+        width = p[0].clientWidth;
+      } else {
+        width = 44;
+      }
       $scope.newReport.students[idx].style = {'width':width+4+'px'};
     }
     p.remove();

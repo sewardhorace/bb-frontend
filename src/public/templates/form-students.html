@@ -1,8 +1,16 @@
 <div class="students">
   <strong>Students: </strong>
   <div ng-repeat="student in newReport.students track by $index" class="form-student">
-    <input  ng-model="newReport.students[$index].text" ng-change="change('student-input',$index)" type="text" placeholder="Name" class="student-input" ng-trim="false" ng-style="newReport.students[$index].style"/>
-    <span class="glyphicon glyphicon-remove" ng-click="removeStudent()"></span>
+    <input
+      ng-model="newReport.students[$index].name"
+      type="text" placeholder="Name" class="student-input" ng-trim="false" ng-style="newReport.students[$index].style"
+      ng-change="change('student-input',$index)"
+      ng-blur="onBlur($index)"
+      uib-typeahead="student as student.name for student in getStudents($viewValue, newReport.room.id)"
+      typeahead-select-on-exact="true"
+      typeahead-on-select="onTypeaheadSelect($item, $model, $label, $event, $index)"
+      />
+    <span class="glyphicon glyphicon-remove" ng-click="removeStudent($index)"></span>
   </div>
   <a href="" class="add-student-btn" ng-click="addStudent($index)">+student</a>
 </div>

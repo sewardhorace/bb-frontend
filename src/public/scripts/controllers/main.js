@@ -9,6 +9,7 @@ angular.module("trackerApp")
   dataService.getStudents(function(response){
     $scope.students = response.data;
   });
+  $scope.getStudents = dataService.getStudents;
   dataService.getRooms(function(response){
     $scope.rooms = response.data;
   });

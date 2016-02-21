@@ -22,6 +22,24 @@ angular.module('trackerApp')
     $http.get('http://localhost:3000/api/v1/students.json')
     .then(callback);
   };
+  this.getStudents = function(string, roomId) {
+    var queryString = "?query_string="+string;
+    if (roomId){
+      queryString += "&room_id="+roomId;
+    }
+    var req = {
+      method: 'GET',
+      url: 'http://localhost:3000/api/v1/students.json' + queryString,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    return $http(req).then(function(response){
+        return response.data.map(function(student){
+          return student;
+        });
+    });
+  };
   this.getRooms = function(callback){
     $http.get('http://localhost:3000/api/v1/rooms.json')
     .then(callback);
