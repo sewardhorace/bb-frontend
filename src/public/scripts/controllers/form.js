@@ -66,11 +66,12 @@ angular.module('trackerApp')
       title:$scope.newReport.title.text,
       time: new Date(date.getFullYear(), date.getMonth(), date.getDate(),
                time.getHours(), time.getMinutes(), time.getSeconds()),
-      students:[],
+      students: $scope.newReport.students.map(function(student){return {id: student.id};}),
       description:$scope.newReport.notes,
       room_id:$scope.newReport.room.id,
       // tags:$scope.newReport.tags
     };
+    console.log(report);
     var data = {
       "report":report
     };
