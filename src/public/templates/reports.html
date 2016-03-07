@@ -6,6 +6,11 @@
       <h1>Student Incident Tracker</h1>
       <navigation></navigation>
 
+      <div uib-collapse="searchBarCollapsed">
+        <input class="search-bar"></input>
+        <button class="search-btn">Search</button>
+      </div>
+
       <div uib-collapse="reportFormCollapsed">
 
         <div class="new-report-header">New Report:</div>
@@ -36,9 +41,6 @@
         </div>
 
       </div>
-
-
-
 
       <div class="report" ng-repeat="report in reports | orderBy:'-updated_at'  | filter:filter">
         <a href="" class="edit-btn">edit</a>

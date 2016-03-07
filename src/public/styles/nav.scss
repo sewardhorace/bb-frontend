@@ -14,10 +14,8 @@ $blue-room-color:#093455;
       color:white;
       text-decoration: none;
       background-color: #808080;
-      // height:28px;
-      // width:50px;
       padding:4px 8px;
-      border-radius: 2px;
+      border-radius: 4px;
       margin:2px 0px;
       &.red{
         background-color: $red-room-color;
@@ -36,9 +34,22 @@ $blue-room-color:#093455;
       text-decoration: none;
       background-color: green;
       padding:4px 8px;
-      border-radius: 2px;
+      border-radius: 4px;
       margin:2px 0px;
       .glyphicon-pencil{
+        display: inline;
+      }
+    }
+    .toggle-search-btn{
+      font-size: 16px;
+      text-align: center;
+      color:white;
+      text-decoration: none;
+      background-color: orange;
+      padding:4px 8px;
+      border-radius: 4px;
+      margin:2px 0px;
+      .glyphicon-search{
         display: inline;
       }
     }
