@@ -2,9 +2,19 @@
 
 angular.module('trackerApp')
 .service('dataService', function($http){
-  this.getReports = function(callback){
-    $http.get('http://localhost:3000/api/v1/reports.json')
-    .then(callback);
+  this.getReports = function(options){
+    var url = 'http://localhost:3000/api/v1/reports.json'
+    if (options.string) {
+      url += "?query_string="+options.string
+    }
+    var req = {
+      method: 'GET',
+      url: url,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    $http(req).then(options.callback);
   };
   this.submitReport = function(user, report, callback){
     var req = {
@@ -17,10 +27,6 @@ angular.module('trackerApp')
       data: report
     };
     $http(req).then(callback);
-  };
-  this.getStudents = function(callback){
-    $http.get('http://localhost:3000/api/v1/students.json')
-    .then(callback);
   };
   this.getStudents = function(string, roomId) {
     var queryString = "?query_string="+string;

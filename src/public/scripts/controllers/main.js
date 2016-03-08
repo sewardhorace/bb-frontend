@@ -2,13 +2,13 @@
 
 angular.module("trackerApp")
 .controller('mainCtrl', function($scope, dataService){
-  dataService.getReports(function(response){
-    $scope.reports = response.data;
+  $scope.getReports = dataService.getReports;
+  $scope.getReports({
+    callback: function(response){
+      $scope.reports = response.data;
+    }
   });
   $scope.submitReport = dataService.submitReport;
-  dataService.getStudents(function(response){
-    $scope.students = response.data;
-  });
   $scope.getStudents = dataService.getStudents;
   dataService.getRooms(function(response){
     $scope.rooms = response.data;
