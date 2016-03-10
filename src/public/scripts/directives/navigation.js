@@ -9,6 +9,9 @@ angular.module('trackerApp')
       scope.reportFormCollapsed = true;
       scope.searchBarCollapsed = true;
 
+      scope.logOutButtonClicked = function(){
+        scope.currentUser = null;
+      };
       scope.newReportClicked = function(){
         scope.reportFormCollapsed = !scope.reportFormCollapsed;
       };

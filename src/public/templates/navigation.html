@@ -1,17 +1,34 @@
 <nav class="navigation">
-  <li>
-    <a ng-click="filterReports('red')" class="filter-btn red" href="">Red</a>
-  </li>
-  <li>
-    <a ng-click="filterReports('purple')" class="filter-btn purple" href="">Purple</a>
-  </li>
-  <li>
-    <a ng-click="filterReports('blue')" class="filter-btn blue" href="">Blue</a>
-  </li>
-  <li>
-    <a ng-click="searchButtonClicked()" class="toggle-search-btn" href=""><span class="glyphicon glyphicon-search"></span></a>
-  </li>
-  <li>
-    <a ng-click="newReportClicked()" class="new-report-btn" href=""><span class="glyphicon glyphicon-pencil"></span></a>
-  </li>
+  <div class="greeting" ng-controller="ModalDemoCtrl">
+    <p ng-show="currentUser">
+      Welcome, {{currentUser.username}}
+      <em>Not {{currentUser.username}}? <a href="" ng-click="logOutButtonClicked()">Log Out</a></em>
+    </p>
+    <p ng-hide="currentUser">
+      <a href="" ng-click="open('sm')">Log in</a> to create reports
+    </p>
+  </div>
+  <div>
+    <li>
+      <a ng-click="filterReports('purple')" class="filter-btn purple" href="">Purple</a>
+    </li>
+    <li>
+      <a ng-click="filterReports('red')" class="filter-btn red" href="">Red</a>
+    </li>
+    <li>
+      <a ng-click="filterReports('blue')" class="filter-btn blue" href="">Blue</a>
+    </li>
+    <li>
+      <a ng-click="filterReports('green')" class="filter-btn green" href="">Green</a>
+    </li>
+    <li>
+      <a ng-click="filterReports('yellow')" class="filter-btn yellow" href="">Yellow</a>
+    </li>
+    <li>
+      <a ng-click="searchButtonClicked()" class="toggle-search-btn" href=""><span class="glyphicon glyphicon-search"></span></a>
+    </li>
+    <li>
+      <a ng-click="newReportClicked()" class="new-report-btn" href=""><span class="glyphicon glyphicon-pencil"></span></a>
+    </li>
+  </div>
 </nav>
