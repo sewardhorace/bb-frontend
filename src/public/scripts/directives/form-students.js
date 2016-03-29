@@ -4,26 +4,31 @@ angular.module('trackerApp')
 .directive('students', function($timeout){
   return {
     templateUrl:'static/templates/form-students.html',
+    restrict:'E',
     replace: true,
     link: function(scope, elem, attrs){
-      scope.newReport.students = [];
+      if(attrs.students){
+        scope.students = scope.$eval(attrs.students);
+      }
 
-      scope.addStudent = function(idx){
-        scope.newReport.students.push({});
+      // scope.students = [];
+
+      scope.addStudent = function(){
+        scope.students.push({});
         //TODO focus on input
       };
       scope.removeStudent = function(idx){
-        scope.newReport.students.splice(idx, 1);
+        scope.students.splice(idx, 1);
       };
       scope.onTypeaheadSelect = function(item, model, label, event, idx){
-        var student = scope.newReport.students[idx];
+        var student = scope.students[idx];
         student.id = model.id;
         student.name = model.name;
-        scope.change('student-input',idx);
+        scope.$broadcast("valueChanged", { newValue: student, oldValue: student });
       };
       scope.onBlur = function(idx){
         $timeout(function () {
-          if (!scope.newReport.students[idx].id){
+          if (!scope.students[idx].id){
             scope.removeStudent(idx);
           }
         }, 250); //delay so that valid options can be selected from the typeahead dropdown

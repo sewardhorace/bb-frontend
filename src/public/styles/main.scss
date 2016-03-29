@@ -47,30 +47,16 @@ body{
   border: 2px solid #5dcb66;
   margin: 6px 0;
   padding: 8px;
-  p.title-width{
-    font-size: 20px;
-    display: inline-block;
-    white-space: pre;
-  }
-  p.tag-width{
-    font-size: 14px;
-    display: inline-block;
-    white-space: pre;
-  }
-  p.student-width{
-    font-size: 16px;
-    display: inline-block;
-    white-space: pre;
-  }
   .save-btn{
     display: block;
     float: right;
     color:#d46262;
     text-decoration: none;
+    margin-left: 6px;
   }
   .title-input {
-    min-width: 52px;
-    width:52px;
+    // min-width: 52px;
+    // width:52px;
     margin:0px 2px;
     display: inline;
     border: none;

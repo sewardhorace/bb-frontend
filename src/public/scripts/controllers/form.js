@@ -1,85 +1,40 @@
 'use strict';
 
 angular.module('trackerApp')
-.controller('formCtrl', function ($scope) {
+.controller('formCtrl', function ($scope, $attrs, dataService) {
 
-  $scope.newReport = {
-    title: "",
-    room: {}
-  };
+  if($attrs.report){
+    $scope.report = $scope.$eval($attrs.report);
+  }
 
-  // $scope.redRoom = {
-  //   name:'Red',
-  //   hexColor:'#A3372C'
-  // };
-  // $scope.blueRoom = {
-  //   name:'Blue',
-  //   hexColor:'#093455'
-  // };
-  // $scope.purpleRoom = {
-  //   name:'Purple',
-  //   hexColor:'#643275'
-  // };
-
-  $scope.change = function(className,idx){
-    console.log("changed");
-    //render the text in a <p> element to get its width, then remove the <p> element
-    var p = angular.element(document.createElement('p'));
-    var form = angular.element(document.getElementById('form'));
-    var width;
-
-    if (className === 'title-input'){
-      p.text($scope.newReport.title.text);
-      p.addClass('title-width');
-      form.append(p);
-      width = p[0].clientWidth;
-      $scope.newReport.title.style = {'width':width+4+'px'};
-
-    } else if (className === 'tag-input'){
-      p.text($scope.newReport.tags[idx].text);
-      p.addClass('tag-width');
-      form.append(p);
-      width = p[0].clientWidth;
-      $scope.newReport.tags[idx].style = {'width':width+4+'px'};
-
-    } else if (className === 'student-input'){
-      var text = $scope.newReport.students[idx].name
-      if (text.length > 0){
-        p.text(text);
-        p.addClass('student-width');
-        form.append(p);
-        width = p[0].clientWidth;
-      } else {
-        width = 44;
-      }
-      $scope.newReport.students[idx].style = {'width':width+4+'px'};
-    }
-    p.remove();
-  };
-
+  $scope.cancel = function(){
+    $scope.report.editing = false;
+  }
 
   $scope.save = function(){
-    console.log("saved button clicked");
-    var date = $scope.newReport.date;
-    var time = $scope.newReport.time;
+    console.log("save button clicked");
+
+    var date = $scope.report.date;
+    var time = $scope.report.time;
     var report = {
-      title:$scope.newReport.title.text,
+      id: $scope.report.id,
+      title:$scope.report.title,
       time: new Date(date.getFullYear(), date.getMonth(), date.getDate(),
                time.getHours(), time.getMinutes(), time.getSeconds()),
-      students: $scope.newReport.students.map(function(student){return {id: student.id};}),
-      description:$scope.newReport.notes,
-      room_id:$scope.newReport.room.id,
-      // tags:$scope.newReport.tags
+      students: $scope.report.students.map(function(student){return {id: student.id};}),
+      description:$scope.report.description,
+      room_id:$scope.report.room.id,
+      // tags:$scope.report.tags
     };
-    console.log(report);
+
     var data = {
       "report":report
     };
-    $scope.submitReport($scope.currentUser, data, function(response){
+    dataService.submitReport($scope.currentUser, data, function(response){
       console.log(response.statusText);
       if (response.status === 201){
-        $scope.$parent.reports.push(response.data.report);
-        $scope.newReport = {
+        $scope.reports.push(response.data.report);
+        $scope.report = {
           title:"",
           date: new Date(),
           time: new Date(),
@@ -88,6 +43,9 @@ angular.module('trackerApp')
           notes: "",
           room:null
         };
+      } else if (response.status === 200){
+        console.log("Update successful");
+        $scope.report.editing = false;
       } else {
         console.log("Record not created");
       }

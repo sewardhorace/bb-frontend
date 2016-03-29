@@ -5,60 +5,42 @@
 
       <h1>Student Incident Tracker</h1>
       <navigation></navigation>
-
       <search></search>
-
-      <div uib-collapse="reportFormCollapsed">
-
+      <div ng-show="newReport.editing">
         <div class="new-report-header">New Report:</div>
-        <div class="report-form" ng-controller="formCtrl" id="form">
-          <a href="" class="save-btn" ng-click="save()">save</a>
-          <input class="title-input" placeholder="+Title" ng-model="newReport.title.text" ng-change="change('title-input')" ng-trim="false" ng-style="newReport.title.style"></input>
-          <!-- <tags></tags> -->
-          <div class="subhead" ng-controller="DateTimePickerCtrl">
-            <div class="input-group date-input">
-              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="newReport.date" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open1()"/>
-            </div>
-            <span>at</span>
-            <uib-timepicker class="time-input"show-spinners="false" ng-model="newReport.time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
-            <span>by {{currentUser.username}}</span>
-          </div>
-          <rooms></rooms>
-          <!-- <div class="rooms">
-            <strong>Room: </strong>
-            <input id="red" type="radio" ng-model="newReport.room" ng-value="redRoom"/>
-            <label for="red" ng-style="{'background-color':redRoom.hexColor}">Red</label>
-            <input id="purple" type="radio" ng-model="newReport.room" ng-value="purpleRoom"/>
-            <label for="purple" ng-style="{'background-color':purpleRoom.hexColor}">Purple</label>
-            <input id="blue" type="radio" ng-model="newReport.room" ng-value="blueRoom"/>
-            <label for="blue" ng-style="{'background-color':blueRoom.hexColor}">Blue</lable>
-          </div> -->
-          <students></students>
-          <div class="notes"><strong>Notes: </strong><input class="notes-input" placeholder="+notes" ng-model="newReport.notes"></input></div>
+        <div class="report-form">
+          <reportform report="newReport"></reportform>
         </div>
-
       </div>
 
-      <div class="report" ng-repeat="report in reports | orderBy:'-updated_at'  | filter:filter">
-        <a href="" class="edit-btn">edit</a>
-        <h3>{{report.title}}</h3>
-        <!-- <div class="tags">
-          <a href="" class="tag" ng-repeat="tag in report.tags">#{{tag}}</a>
-        </div> -->
-        <div class="subhead">
-          <span>{{report.time | date:'MMM d'}}</span>
-          at
-          <span class="time">{{report.time | date:'h:mma'}},</span>
-           by
-          <span>{{report.user.username}}</span>
+      <div ng-repeat="report in reports | orderBy:'-updated_at'  | filter:filter">
+
+        <div ng-hide="report.editing" class="report">
+          <a href="" class="edit-btn" ng-click="editButtonClicked(report)">edit</a>
+          <h3>{{report.title}}</h3>
+          <!-- <div class="tags">
+            <a href="" class="tag" ng-repeat="tag in report.tags">#{{tag}}</a>
+          </div> -->
+          <div class="subhead">
+            <span>{{report.time | date:'MMM d'}}</span>
+            at
+            <span class="time">{{report.time | date:'h:mma'}},</span>
+             by
+            <span>{{report.user.username}}</span>
+          </div>
+          <div class="room" ng-style="{'background-color':report.room.hex_color}">
+            {{report.room.name}} room</div>
+          <div class="students">
+            <strong>Students: </strong>
+            <a href="" class="student" ng-repeat="student in report.students">{{student.name}}</a>
+          </div>
+          <div class="notes"><strong>Notes: </strong>{{report.description}}</div>
         </div>
-        <div class="students">
-          <strong>Students: </strong>
-          <a href="" class="student" ng-repeat="student in report.students">{{student.name}}</a>
+
+        <div class="report-form" ng-show="report.editing">
+          <reportform report="report"></reportform>
         </div>
-        <div class="notes"><strong>Notes: </strong>{{report.description}}</div>
-        <div class="room" ng-style="{'background-color':report.room.hex_color}">
-          {{report.room.name}} room</div>
+
       </div>
 
     </div>

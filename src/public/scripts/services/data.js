@@ -16,16 +16,24 @@ angular.module('trackerApp')
     };
     $http(req).then(options.callback);
   };
-  this.submitReport = function(user, report, callback){
+  this.submitReport = function(user, data, callback){
     var req = {
-      method: 'POST',
-      url: 'http://localhost:3000/api/v1/reports.json',
       headers: {
         'Authorization': user.auth_token,
         'Content-Type': 'application/json'
       },
-      data: report
+      data: data
     };
+    var id = data.report.id;
+    if (!id){
+      console.log("saving new report");
+      req.method = 'POST';
+      req.url = 'http://localhost:3000/api/v1/reports.json';
+    } else {
+      console.log("updating existing report");
+      req.method = 'PUT';
+      req.url = 'http://localhost:3000/api/v1/reports/' + id + '.json';
+    }
     $http(req).then(callback);
   };
   this.getStudents = function(string, roomId) {

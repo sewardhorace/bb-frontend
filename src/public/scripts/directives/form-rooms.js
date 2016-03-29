@@ -5,11 +5,11 @@ angular.module('trackerApp')
   return {
     templateUrl:'static/templates/form-rooms.html',
     replace: true,
+    restrict:'E',
     link: function(scope, elem, attrs){
-      // scope.selectRoom = function(){
-      //   console.log("room selected");
-      //   // scope.room =
-      // };
+      if(attrs.room){
+        scope.room = scope.$eval(attrs.room);
+      }
     }
   };
 });

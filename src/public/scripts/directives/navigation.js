@@ -6,14 +6,13 @@ angular.module('trackerApp')
     templateUrl:'static/templates/navigation.html',
     replace: true,
     link: function(scope, elem, attrs){
-      scope.reportFormCollapsed = true;
       scope.searchBarCollapsed = true;
 
       scope.logOutButtonClicked = function(){
         scope.currentUser = null;
       };
       scope.newReportClicked = function(){
-        scope.reportFormCollapsed = !scope.reportFormCollapsed;
+        scope.newReport.editing = !scope.newReport.editing;
       };
       scope.searchButtonClicked = function(){
         scope.searchBarCollapsed = !scope.searchBarCollapsed;

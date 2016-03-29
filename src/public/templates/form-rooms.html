@@ -1,7 +1,8 @@
 <div class="room">
   <strong>Room: </strong>
-  <label ng-repeat="room in rooms" ng-style="{'background-color':room.hex_color}">
-    <input type="radio" ng-model="newReport.room.id" ng-value="room.id"/>
-    <span>{{room.name}}</span>
+  <label ng-repeat="roomChoice in rooms"
+    ng-style="{'background-color':roomChoice.hex_color}">
+    <input type="radio" ng-model="room.id" ng-value="roomChoice.id"/>
+    <span>{{roomChoice.name}}</span>
   </label>
 </div>
